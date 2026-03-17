@@ -5,13 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Amanda Figueroa</title>
   <meta name="description" content="Growth marketer and fractional CMO helping B2B brands and startups grow. From New Jersey." />
-  <!-- Open Graph / LinkedIn -->
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://amandafigueroa.me" />
-<meta property="og:title" content="Amanda Figueroa — Growth Marketer & Fractional CMO" />
-<meta property="og:description" content="I help B2B brands and startups grow through paid media, SEO, content, and marketing experiments." />
-<meta property="og:image" content="https://amandafigueroa.me/og-image.png" />
-<meta name="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2aWV3Qm94PSIwIDAgNjQgNjQiIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiI+PGltYWdlIGhyZWY9ImRhdGE6aW1hZ2UvcG5nO2Jhc2U2NCxpVkJPUncwS0dnb0FBQUFOU1VoRVVnQUFBRUFBQUFCQUNBWUFBQUNxYVhIZUFBQUJDR2xEUTFCSlEwTWdVSEp2Wm1sc1pRQUFlSnhqWUdBOHdRQUVMQVlNRExsNUpVVkI3azRLRVpGUkN1d1BHQmlCRUF3U2s0c0xHSEFEb0twdjF5QnFMK3ZpVVljTGNLYWtGaWNENlE5QXJGSUV0QnhvcEFpUUxaSU9ZV3VBMkVrUXRnMklYVjVTVUFKa0I0RFlSU0ZCemtCMkNwQ3RrWTdFVGtKaUp4Y1VnZFQzQU5rMnVUbWx5UWgzTS9DazVvVUdBMmtPSUpaaEtHWUlZbkJuY0FMNUg2SWtmeEVEZzhWWEJnYm1DUWl4cEprTUROdGJHUmdrYmlIRVZCWXdNUEMzTURCc080OFFRNFJKUVdKUklsaUlCWWlaMHRJWUdENHRaMkRnaldSZ0VMN0F3TUFWRFFzSUhHNVRBTHZOblNFZkNOTVpjaGhTZ1NLZURIa015UXg2UUpZUmd3R0RJWU1aQUtiV1B6OUhiT0JRQUFBQW1VbEVRVlI0bk8zUVFSSEFJQURBTUVBT2hsQ0t2aUVqanpVS2VwMzM3Ry84Mk5JQldnTjBnTllBSGFBMVFBZG9EZEFCV2dOMGdOWUFIYUExUUFkb0RkQUJXZ04wZ05ZQUhhQTFRQWRvRGRBQldnTjBnTllBSGFBMVFBZG9EZEFCV2dOMGdOWUFIYUExUUFkb0RkQUJXZ04wZ05ZQUhhQTFRQWRvRGRBQldnTjBnTllBSGFBMVFBZG9EZEFCV2dOMGdOWUFIYUExUUFkb0R5RGxBclZ3ZG8yRUFBQUFBRWxGVGtTdVFtQ0MiIHg9IjAiIHk9IjAiIHdpZHRoPSI2NCIgaGVpZ2h0PSI2NCIvPjwvc3ZnPg==" />
   <link rel="alternate icon" href="favicon.ico" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -327,7 +320,7 @@
       transition: color 0.25s;
     }
     .work-list li::before {
-      content: '4';
+      content: '•';
       color: var(--ink-faint);
       flex-shrink: 0;
       font-size: 13px;
@@ -442,34 +435,7 @@
     /* Restore default pointer on interactive elements so it still feels right */
 
   
-    /* ── CUSTOM CURSOR ── */
-    body { cursor: none; }
-    a, button, .theme-toggle, [role="button"] { cursor: none; }
-
-    #cursor-dot {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-      background: var(--accent);
-      pointer-events: none;
-      z-index: 9999;
-      transform: translate(-50%, -50%);
-      opacity: 1;
-      transition: width 0.18s ease, height 0.18s ease, opacity 0.2s ease;
-      will-change: left, top;
-    }
-    body.cursor-hover #cursor-dot {
-      width: 20px;
-      height: 20px;
-      opacity: 0.55;
-    }
-    body.cursor-out #cursor-dot {
-      opacity: 0;
-    }
-  </style>
+    </style>
 </head>
 <body>
 
@@ -643,54 +609,6 @@
 
 <!-- CURSOR DOT -->
 <div id="cursor-dot" aria-hidden="true"></div>
-
-<script>
-  (function() {
-    const dot  = document.getElementById('cursor-dot');
-    const body = document.body;
-    let mouseX = -100, mouseY = -100;
-    let rafId;
-
-    function moveDot() {
-      dot.style.left = mouseX + 'px';
-      dot.style.top  = mouseY + 'px';
-    }
-
-    document.addEventListener('mousemove', (e) => {
-      mouseX = e.clientX;
-      mouseY = e.clientY;
-      cancelAnimationFrame(rafId);
-      rafId = requestAnimationFrame(moveDot);
-    });
-
-    // Grow on interactive elements
-    const interactiveSelector = 'a, button, [role="button"], input, label, .theme-toggle';
-    document.addEventListener('mouseover', (e) => {
-      if (e.target.closest(interactiveSelector)) {
-        body.classList.add('cursor-hover');
-      }
-    });
-    document.addEventListener('mouseout', (e) => {
-      if (e.target.closest(interactiveSelector)) {
-        body.classList.remove('cursor-hover');
-      }
-    });
-
-    // Hide when leaving window
-    document.addEventListener('mouseleave', () => body.classList.add('cursor-out'));
-    document.addEventListener('mouseenter', () => body.classList.remove('cursor-out'));
-
-    // Don't show on touch devices
-    window.addEventListener('touchstart', () => {
-      dot.style.display = 'none';
-      document.querySelectorAll('*').forEach(el => el.style.cursor = '');
-    }, { once: true });
-  })();
-</script>
-
-
-<!-- CURSOR DOT -->
-<div id="cursor-dot" aria-hidden="true"></div>
 <script>
 (function() {
   var dot  = document.getElementById('cursor-dot');
@@ -715,4 +633,14 @@
     if (e.target.closest(sel)) body.classList.remove('cursor-hover');
   });
 
-  document.
+  document.addEventListener('mouseleave', function() { body.classList.add('cursor-out'); });
+  document.addEventListener('mouseenter', function() { body.classList.remove('cursor-out'); });
+
+  window.addEventListener('touchstart', function() {
+    dot.style.display = 'none';
+    body.style.cursor = '';
+  }, { once: true });
+})();
+</script>
+</body>
+</html>
