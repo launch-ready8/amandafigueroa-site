@@ -128,6 +128,16 @@ h1, h2, h3, h4 {
   padding: 16px 0;
   gap: 32px;
 }
+.nav-cluster {
+  display: flex;
+  align-items: center;
+  gap: clamp(20px, 2.5vw, 32px);
+}
+.nav-controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
 .nav-logo {
   font-size: 18px;
   font-weight: 600;
@@ -194,6 +204,57 @@ h1, h2, h3, h4 {
   background: transparent;
   color: var(--fg);
   place-items: center;
+}
+
+/* ---------- Nav CTA button (animated chevron) ---------- */
+.nav-cta {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  height: 38px;
+  padding: 0 12px 0 18px;
+  border-radius: var(--radius-pill);
+  background: var(--primary);
+  color: #FFFFFF;
+  font-size: 14px;
+  font-weight: 500;
+  overflow: hidden;
+  white-space: nowrap;
+  transition: background 0.25s ease, transform 0.15s ease;
+  border: 1px solid transparent;
+}
+.nav-cta:hover { background: var(--accent); }
+.nav-cta:active { transform: translateY(1px); }
+.nav-cta-text {
+  margin-right: 36px;
+  position: relative;
+  z-index: 1;
+  transition: opacity 0.4s ease;
+}
+.nav-cta:hover .nav-cta-text { opacity: 0; }
+.nav-cta-arrow {
+  position: absolute;
+  right: 4px;
+  top: 4px;
+  bottom: 4px;
+  width: 28%;
+  display: grid;
+  place-items: center;
+  background: rgba(255, 255, 255, 0.18);
+  border-radius: 999px;
+  z-index: 2;
+  color: #FFFFFF;
+  transition: width 0.45s cubic-bezier(0.4, 0, 0.2, 1), transform 0.15s ease;
+}
+.nav-cta:hover .nav-cta-arrow { width: calc(100% - 8px); }
+.nav-cta:active .nav-cta-arrow { transform: scale(0.95); }
+.nav-cta-arrow svg { width: 16px; height: 16px; }
+
+/* Mobile-only "Get In Touch" link — appears in the hamburger dropdown */
+.mobile-only-link { display: none; }
+@media (max-width: 720px) {
+  .nav-cta { display: none; }
+  .mobile-only-link { display: block; }
 }
 
 /* ---------- Buttons / links ---------- */
@@ -1028,7 +1089,11 @@ h1, h2, h3, h4 {
 .divider { border-top: 1px solid var(--border); margin: 0; }
 
 /* ---------- Cursor proximity letter effect ---------- */
-.text-prox { display: inline-block; }
+.text-prox { display: inline; }
+.prox-word {
+  display: inline-block;
+  white-space: nowrap;
+}
 .prox-letter {
   display: inline-block;
   will-change: transform, color, font-weight;

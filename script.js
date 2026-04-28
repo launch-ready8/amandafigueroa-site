@@ -69,14 +69,24 @@ document.addEventListener("DOMContentLoaded", () => {
         const text = child.textContent;
         if (!text.trim()) continue;
         const frag = document.createDocumentFragment();
-        for (const ch of text) {
-          if (ch === " " || ch === "\n" || ch === "\t" || ch === "\r") {
-            frag.appendChild(document.createTextNode(ch));
+        // Split into words + whitespace tokens so we can wrap each word
+        // in a non-breaking container — otherwise per-letter inline-blocks
+        // give the browser permission to wrap mid-word.
+        const tokens = text.split(/(\s+)/);
+        for (const token of tokens) {
+          if (!token) continue;
+          if (/^\s+$/.test(token)) {
+            frag.appendChild(document.createTextNode(token));
           } else {
-            const span = document.createElement("span");
-            span.className = "prox-letter";
-            span.textContent = ch;
-            frag.appendChild(span);
+            const wordSpan = document.createElement("span");
+            wordSpan.className = "prox-word";
+            for (const ch of token) {
+              const letter = document.createElement("span");
+              letter.className = "prox-letter";
+              letter.textContent = ch;
+              wordSpan.appendChild(letter);
+            }
+            frag.appendChild(wordSpan);
           }
         }
         node.replaceChild(frag, child);
