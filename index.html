@@ -1,655 +1,274 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-2CMGTJR0NY"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-2CMGTJR0NY');
-</script>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Amanda Figueroa</title>
-  <meta name="description" content="Growth marketer and fractional CMO helping B2B brands and startups grow. From New Jersey." />
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2aWV3Qm94PSIwIDAgNjQgNjQiIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiI+PGltYWdlIGhyZWY9ImRhdGE6aW1hZ2UvcG5nO2Jhc2U2NCxpVkJPUncwS0dnb0FBQUFOU1VoRVVnQUFBRUFBQUFCQUNBWUFBQUNxYVhIZUFBQUJDR2xEUTFCSlEwTWdVSEp2Wm1sc1pRQUFlSnhqWUdBOHdRQUVMQVlNRExsNUpVVkI3azRLRVpGUkN1d1BHQmlCRUF3U2s0c0xHSEFEb0twdjF5QnFMK3ZpVVljTGNLYWtGaWNENlE5QXJGSUV0QnhvcEFpUUxaSU9ZV3VBMkVrUXRnMklYVjVTVUFKa0I0RFlSU0ZCemtCMkNwQ3RrWTdFVGtKaUp4Y1VnZFQzQU5rMnVUbWx5UWgzTS9DazVvVUdBMmtPSUpaaEtHWUlZbkJuY0FMNUg2SWtmeEVEZzhWWEJnYm1DUWl4cEprTUROdGJHUmdrYmlIRVZCWXdNUEMzTURCc080OFFRNFJKUVdKUklsaUlCWWlaMHRJWUdENHRaMkRnaldSZ0VMN0F3TUFWRFFzSUhHNVRBTHZOblNFZkNOTVpjaGhTZ1NLZURIa015UXg2UUpZUmd3R0RJWU1aQUtiV1B6OUhiT0JRQUFBQW1VbEVRVlI0bk8zUVFSSEFJQURBTUVBT2hsQ0t2aUVqanpVS2VwMzM3Ry84Mk5JQldnTjBnTllBSGFBMVFBZG9EZEFCV2dOMGdOWUFIYUExUUFkb0RkQUJXZ04wZ05ZQUhhQTFRQWRvRGRBQldnTjBnTllBSGFBMVFBZG9EZEFCV2dOMGdOWUFIYUExUUFkb0RkQUJXZ04wZ05ZQUhhQTFRQWRvRGRBQldnTjBnTllBSGFBMVFBZG9EZEFCV2dOMGdOWUFIYUExUUFkb0R5RGxBclZ3ZG8yRUFBQUFBRWxGVGtTdVFtQ0MiIHg9IjAiIHk9IjAiIHdpZHRoPSI2NCIgaGVpZ2h0PSI2NCIvPjwvc3ZnPg==" />
-  <link rel="alternate icon" href="favicon.ico" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Amanda Figueroa — Growth marketer + fractional CMO</title>
+  <meta name="description" content="Amanda Figueroa is a growth marketer and fractional CMO from New Jersey. She helps B2B brands and startups grow through paid media, SEO, content, and marketing experiments." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300;1,9..144,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet" />
-
-  <style>
-    /* ── LIGHT / DARK TOKENS ── */
-    :root {
-      --bg:           #faf8f4;
-      --bg-nav:       rgba(250,248,244,0.94);
-      --ink:          #1c1917;
-      --ink-mid:      #6b6560;
-      --ink-faint:    #b8b3ae;
-      --accent:       #b5572a;
-      --rule:         #e8e4df;
-      --photo-bg:     #ede9e4;
-      --toggle-bg:    #e2ddd8;
-      --toggle-knob:  #ffffff;
-      --serif:        'Fraunces', Georgia, serif;
-      --sans:         'Outfit', system-ui, sans-serif;
-      --max-w:        780px;
-      --pad-x:        clamp(24px, 6vw, 80px);
-    }
-
-    [data-theme="dark"] {
-      --bg:           #181614;
-      --bg-nav:       rgba(24,22,20,0.94);
-      --ink:          #f0ece6;
-      --ink-mid:      #9e9890;
-      --ink-faint:    #5c5854;
-      --accent:       #d4673a;
-      --rule:         #2e2b28;
-      --photo-bg:     #2a2724;
-      --toggle-bg:    #3a3632;
-      --toggle-knob:  #f0ece6;
-    }
-
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
-
-    body {
-      background: var(--bg);
-      color: var(--ink);
-      font-family: var(--sans);
-      font-size: 17px;
-      line-height: 1.7;
-      -webkit-font-smoothing: antialiased;
-      transition: background 0.25s ease, color 0.25s ease;
-    }
-
-    a {
-      color: var(--accent);
-      text-decoration: none;
-      border-bottom: 1px solid transparent;
-      transition: border-color 0.15s, color 0.25s;
-    }
-    a:hover { border-bottom-color: var(--accent); }
-
-    /* ── UNDERLINE ANIMATION ── */
-    .ul-link {
-      position: relative;
-      display: inline-block;
-      border: none !important;
-      color: inherit;
-    }
-    .ul-link::after {
-      content: '';
-      position: absolute;
-      bottom: -1px;
-      left: 0;
-      width: 0;
-      height: 1px;
-      background: currentColor;
-      transition: width 0.28s cubic-bezier(0.4,0,0.2,1);
-    }
-    .ul-link:hover::after { width: 100%; }
-    .ul-link-accent { color: var(--accent); }
-    .ul-link-accent::after { background: var(--accent); }
-
-    /* ── NAV ── */
-    nav {
-      position: sticky;
-      top: 0;
-      z-index: 50;
-      background: var(--bg-nav);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-      border-bottom: 1px solid transparent;
-      transition: border-color 0.2s, background 0.25s;
-      padding: 18px var(--pad-x);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    nav.bordered { border-bottom-color: var(--rule); }
-
-    .nav-name {
-      font-family: var(--serif);
-      font-size: 16px;
-      font-weight: 500;
-      color: var(--ink);
-      border: none !important;
-      transition: color 0.25s;
-    }
-    .nav-name:hover { border: none !important; }
-
-    .nav-right {
-      display: flex;
-      align-items: center;
-      gap: 24px;
-    }
-    .nav-link {
-      font-size: 14px;
-      font-weight: 400;
-      color: var(--ink-mid);
-      border: none !important;
-      transition: color 0.2s;
-    }
-    .nav-link:hover { color: var(--ink); border: none !important; }
-    .nav-cta {
-      font-size: 14px;
-      font-weight: 500;
-      color: var(--accent) !important;
-    }
-
-    /* ── DARK MODE TOGGLE ── */
-    .theme-toggle {
-      position: relative;
-      width: 40px;
-      height: 22px;
-      flex-shrink: 0;
-      cursor: pointer;
-      background: none;
-      border: none;
-      padding: 0;
-    }
-    .theme-toggle-track {
-      position: absolute;
-      inset: 0;
-      border-radius: 100px;
-      background: var(--toggle-bg);
-      transition: background 0.25s;
-    }
-    .theme-toggle-knob {
-      position: absolute;
-      top: 3px;
-      left: 3px;
-      width: 16px;
-      height: 16px;
-      border-radius: 50%;
-      background: var(--toggle-knob);
-      transition: transform 0.25s cubic-bezier(0.4,0,0.2,1), background 0.25s;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    [data-theme="dark"] .theme-toggle-knob {
-      transform: translateX(18px);
-    }
-    .toggle-icon {
-      width: 10px;
-      height: 10px;
-      flex-shrink: 0;
-    }
-    /* focus ring for accessibility */
-    .theme-toggle:focus-visible .theme-toggle-track {
-      outline: 2px solid var(--accent);
-      outline-offset: 2px;
-    }
-
-    /* ── PAGE WRAPPER ── */
-    .page {
-      max-width: var(--max-w);
-      margin: 0 auto;
-      padding: 0 var(--pad-x);
-    }
-
-    /* ── INTRO ── */
-    .intro {
-      padding: 64px 0 56px;
-      display: grid;
-      grid-template-columns: 104px 1fr;
-      gap: 28px;
-      align-items: start;
-      animation: fadeIn 0.5s ease both;
-    }
-
-    .photo-wrap {
-      width: 104px;
-      height: 104px;
-      border-radius: 50%;
-      overflow: hidden;
-      background: var(--photo-bg);
-      flex-shrink: 0;
-      margin-top: 4px;
-      transition: background 0.25s;
-    }
-    .photo-wrap img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-
-    .intro-greeting {
-      font-family: var(--serif);
-      font-size: clamp(20px, 2.8vw, 24px);
-      font-weight: 400;
-      line-height: 1.45;
-      color: var(--ink);
-      margin-bottom: 10px;
-      transition: color 0.25s;
-    }
-    .intro-sub {
-      font-size: 16px;
-      font-weight: 300;
-      line-height: 1.65;
-      color: var(--ink-mid);
-      transition: color 0.25s;
-    }
-
-    hr {
-      border: none;
-      border-top: 1px solid var(--rule);
-      margin: 0;
-      transition: border-color 0.25s;
-    }
-
-    /* ── SECTIONS ── */
-    section {
-      padding: 52px 0;
-      border-bottom: 1px solid var(--rule);
-      animation: fadeIn 0.5s ease both;
-      transition: border-color 0.25s;
-    }
-    section:last-of-type { border-bottom: none; }
-    section:nth-of-type(2) { animation-delay: 0.05s; }
-    section:nth-of-type(3) { animation-delay: 0.1s; }
-    section:nth-of-type(4) { animation-delay: 0.15s; }
-    section:nth-of-type(5) { animation-delay: 0.2s; }
-
-    .section-label {
-      font-size: 12px;
-      font-weight: 500;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--ink-faint);
-      margin-bottom: 20px;
-      transition: color 0.25s;
-    }
-
-    /* ── ABOUT ── */
-    .about-body {
-      font-size: 16px;
-      font-weight: 300;
-      line-height: 1.82;
-      color: var(--ink);
-      transition: color 0.25s;
-    }
-    .about-body p + p { margin-top: 18px; }
-
-    /* ── CURRENTLY ── */
-    .currently-list {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-    }
-    .currently-item {
-      display: grid;
-      grid-template-columns: 116px 1fr;
-      gap: 12px;
-      font-size: 16px;
-    }
-    .currently-key {
-      font-weight: 400;
-      color: var(--ink-mid);
-      font-size: 13px;
-      padding-top: 2px;
-      letter-spacing: 0.01em;
-      transition: color 0.25s;
-    }
-    .currently-val {
-      font-weight: 300;
-      color: var(--ink);
-      line-height: 1.55;
-      transition: color 0.25s;
-    }
-
-    /* ── WHAT I DO ── */
-    .work-intro {
-      font-size: 16px;
-      font-weight: 300;
-      line-height: 1.82;
-      color: var(--ink);
-      margin-bottom: 24px;
-      transition: color 0.25s;
-    }
-    .work-list {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-    .work-list li {
-      font-size: 16px;
-      font-weight: 300;
-      color: var(--ink);
-      display: flex;
-      align-items: baseline;
-      gap: 12px;
-      transition: color 0.25s;
-    }
-    .work-list li::before {
-      content: '•';
-      color: var(--ink-faint);
-      flex-shrink: 0;
-      font-size: 13px;
-      transition: color 0.25s;
-    }
-
-    /* ── CONTACT ── */
-    .contact-text {
-      font-size: 16px;
-      font-weight: 300;
-      line-height: 1.82;
-      color: var(--ink);
-      transition: color 0.25s;
-    }
-
-    /* ── FOOTER ── */
-    footer {
-      padding: 32px 0 52px;
-      transition: color 0.25s;
-    }
-    .footer-inner {
-      max-width: var(--max-w);
-      margin: 0 auto;
-      padding: 0 var(--pad-x);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    .footer-copy {
-      font-size: 13px;
-      font-weight: 300;
-      color: var(--ink-faint);
-      transition: color 0.25s;
-    }
-    .footer-links {
-      display: flex;
-      gap: 20px;
-    }
-    .footer-links a {
-      font-size: 13px;
-      font-weight: 400;
-      color: var(--ink-mid);
-      border: none !important;
-      transition: color 0.2s;
-    }
-    .footer-links a:hover { color: var(--ink); border: none !important; }
-
-    /* ── ANIMATIONS ── */
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(10px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-
-    /* ── RESPONSIVE ── */
-    @media (max-width: 600px) {
-      :root { --pad-x: 24px; }
-      nav { padding: 16px var(--pad-x); }
-      .nav-right { gap: 16px; }
-      .intro {
-        grid-template-columns: 1fr;
-        gap: 20px;
-        padding: 44px 0 40px;
-      }
-      .photo-wrap { width: 88px; height: 88px; }
-      .currently-item {
-        grid-template-columns: 1fr;
-        gap: 3px;
-      }
-      .currently-key {
-        font-size: 11px;
-        letter-spacing: 0.07em;
-        text-transform: uppercase;
-        color: var(--ink-faint);
-      }
-      .footer-inner { flex-direction: column; gap: 12px; align-items: flex-start; }
-    }
-    @media (max-width: 400px) {
-      .nav-right .nav-link:not(.nav-cta) { display: none; }
-    }
-  
-    /* ── CUSTOM CURSOR ── */
-    * { cursor: none !important; }
-
-    #cursor-dot {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-      background: var(--accent);
-      pointer-events: none;
-      z-index: 9999;
-      transform: translate(-50%, -50%);
-      transition: transform 0.12s ease, opacity 0.2s ease, width 0.18s ease, height 0.18s ease;
-      will-change: transform;
-      mix-blend-mode: normal;
-    }
-
-    /* Grow on hover over links/buttons */
-    body.cursor-hover #cursor-dot {
-      width: 20px;
-      height: 20px;
-      opacity: 0.6;
-    }
-
-    /* Hide when cursor leaves window */
-    body.cursor-out #cursor-dot {
-      opacity: 0;
-    }
-
-    /* Restore default pointer on interactive elements so it still feels right */
-
-  
-    </style>
+  <link href="https://fonts.googleapis.com/css2?family=Zalando+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-
-<!-- NAV -->
-<nav id="nav">
-  <a href="#" class="nav-name ul-link">Amanda Figueroa</a>
-  <div class="nav-right">
-    <a href="#about" class="nav-link ul-link">About</a>
-    <a href="#work" class="nav-link ul-link">Work</a>
-    <a href="https://www.linkedin.com/in/amandarfigueroa" target="_blank" rel="noopener" class="nav-link nav-cta ul-link ul-link-accent">Get in touch</a>
-
-    <!-- Dark mode toggle -->
-    <button
-      class="theme-toggle"
-      id="theme-toggle"
-      aria-label="Toggle dark mode"
-      aria-pressed="false"
-      title="Toggle dark mode"
-    >
-      <div class="theme-toggle-track"></div>
-      <div class="theme-toggle-knob" id="toggle-knob">
-        <!-- sun icon (shown in light mode) -->
-        <svg class="toggle-icon" id="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <circle cx="12" cy="12" r="4"/>
-          <line x1="12" y1="2" x2="12" y2="4"/>
-          <line x1="12" y1="20" x2="12" y2="22"/>
-          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
-          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
-          <line x1="2" y1="12" x2="4" y2="12"/>
-          <line x1="20" y1="12" x2="22" y2="12"/>
-          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
-          <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
-        </svg>
-        <!-- moon icon (shown in dark mode, hidden by default) -->
-        <svg class="toggle-icon" id="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="display:none">
-          <path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z"/>
-        </svg>
+  <nav class="nav">
+    <div class="container nav-inner">
+      <a href="index.html" class="nav-logo">Amanda Figueroa<span>.</span></a>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="work.html">Featured Work</a></li>
+        <li><a href="https://www.linkedin.com/in/amandarfigueroa/" target="_blank" rel="noopener">Get In Touch</a></li>
+      </ul>
+      <div style="display:flex; gap:8px; align-items:center;">
+        <button class="theme-toggle" data-theme-toggle aria-label="Toggle dark mode">
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+        </button>
+        <button class="nav-toggle" data-nav-toggle aria-label="Open menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" width="16"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        </button>
       </div>
-    </button>
-  </div>
-</nav>
-
-<div class="page">
-
-  <!-- INTRO -->
-  <div class="intro">
-    <div class="photo-wrap">
-      <img src="data:image/jpeg;base64,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" alt="Amanda Figueroa" />
     </div>
-    <div class="intro-text">
-      <p class="intro-greeting">Hi, I'm Amanda. I'm a growth marketer and fractional CMO from New Jersey.</p>
-      <p class="intro-sub">I help B2B brands and startups grow through paid media, SEO, content, and marketing experiments.</p>
+  </nav>
+
+  <header class="hero">
+    <div class="container">
+      <h1 class="display-1 hero-headline">Hi, I'm Amanda.</h1>
+      <p class="lede">I'm a growth marketer and fractional CMO from New Jersey. I help B2B brands and startups grow through paid media, SEO, content, and marketing experiments.</p>
     </div>
-  </div>
+  </header>
 
-  <hr />
-
-  <!-- ABOUT -->
-  <section id="about">
-    <p class="section-label">About</p>
-    <div class="about-body">
-      <p>I started my career in the music industry where many moons ago I had dreams of being a producer. Eventually, I found my way into tech, and in 2018, I became the first marketing hire at a 16-person AI startup with zero ad budget and a lot of ambition.</p>
-      <p>That experience shaped everything. I was running sales demos, writing chatbot scripts, hunting for leads, launching a podcast, and figuring out which messages actually resonated with real people. I learned fast and got to create the playbook in real time.</p>
-      <p>I still bring that same scrappy energy to the work today. I love working with teams that are just starting to build their growth engine &mdash; whether that's because they don't have a marketing team yet, or they're ready to test something new. I like to figure out what's working in the industry and then find our own creative angle.</p>
-      <p>When I'm not in front of a laptop, I'm probably on a dance floor, catching a flight, or eating penne vodka.</p>
+  <section class="stats">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat">
+          <div class="value text-prox">$1M+</div>
+          <div class="label">Managed in ad spend across LinkedIn, Google, and Meta.</div>
+        </div>
+        <div class="stat">
+          <div class="value text-prox">30+</div>
+          <div class="label">Clients and partners served, from Fortune 500 brands down to early-stage startups and SMBs.</div>
+        </div>
+        <div class="stat">
+          <div class="value text-prox">10+</div>
+          <div class="label">Time zones covered. I've worked with companies across the globe.</div>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- CURRENTLY -->
-  <section id="currently">
-    <p class="section-label">Currently</p>
-    <ul class="currently-list">
-      <li class="currently-item">
-        <span class="currently-key">Learning</span>
-        <span class="currently-val">Claude Code</span>
-      </li>
-      <li class="currently-item">
-        <span class="currently-key">Working on</span>
-        <span class="currently-val">Editing a personal vlog from last June lol</span>
-      </li>
-      <li class="currently-item">
-        <span class="currently-key">Listening to</span>
-        <span class="currently-val"><a href="https://open.spotify.com/track/2gcSyG9JxCdb4gIDtbbtCG?si=e6d85cd9fcc141de" target="_blank" rel="noopener">Semeia by Gilsons</a></span>
-      </li>
-    </ul>
-  </section>
-
-  <!-- WHAT I DO -->
-  <section id="work">
-    <p class="section-label">What I do</p>
-    <p class="work-intro">I work with B2B companies as a fractional marketing lead or hands-on strategist. That usually means:</p>
-    <ul class="work-list">
-      <li>Fractional CMO / marketing leadership</li>
-      <li>Paid social (LinkedIn, Meta)</li>
-      <li>Paid search (Google, Bing)</li>
-      <li>SEO and GEO strategy</li>
-      <li>Go-to-market planning</li>
-      <li>Content strategy</li>
-    </ul>
-  </section>
-
-  <!-- CONTACT -->
-  <section id="contact">
-    <p class="section-label">Get in touch</p>
-    <p class="contact-text">
-      Always open to new projects or a good conversation. Drop me a line at <span id="email-reveal" style="color:var(--accent);cursor:pointer;border-bottom:1px solid transparent;transition:border-color 0.15s;" title="Click to copy email">amanda[at]launchreadymarketing.com</span> or find me on <a href="https://linkedin.com/in/amandarfigueroa" target="_blank" rel="noopener">LinkedIn</a>.
-    </p>
-  </section>
-
-</div>
-
-<!-- FOOTER -->
-<footer>
-  <div class="footer-inner">
-    <span class="footer-copy">&copy; 2026 Amanda Figueroa</span>
-    <div class="footer-links">
-      <a href="https://www.linkedin.com/in/amandarfigueroa" target="_blank" rel="noopener" class="ul-link">LinkedIn</a>
+  <section id="about" class="section">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-image" aria-label="Portrait of Amanda Figueroa"></div>
+        <div class="about-copy">
+          <div class="eyebrow" style="margin-bottom: 20px;">About</div>
+          <h2 class="display-1 text-prox">A scrappy start, still scrappy now.</h2>
+          <p style="margin-top: 28px;">I started my career in the music industry where many moons ago I had dreams of being a producer. Eventually, I found my way into tech, and in 2018, I became the first marketing hire at a 16-person AI startup with zero ad budget and a lot of ambition.</p>
+          <p>That experience shaped everything. I was running sales demos, writing chatbot scripts, hunting for leads, launching a podcast, and figuring out which messages actually resonated with real people. I learned fast and got to create the playbook in real time.</p>
+          <p>I still bring that same scrappy energy to the work today. I love working with teams that are just starting to build their growth engine, whether that's because they don't have a marketing team yet, or they're ready to test something new. I like to figure out what's working in the industry and then find our own creative angle.</p>
+          <p>When I'm not in front of a laptop, I'm probably on a dance floor, catching a flight, or eating penne vodka.</p>
+          <div class="signature">— Amanda</div>
+        </div>
+      </div>
     </div>
-  </div>
-</footer>
+  </section>
 
-<script>
-  // Nav border on scroll
-  const nav = document.getElementById('nav');
-  window.addEventListener('scroll', () => {
-    nav.classList.toggle('bordered', window.scrollY > 8);
-  }, { passive: true });
+  <section id="services" class="services section">
+    <div class="container">
+      <div class="services-grid">
+        <div>
+          <div class="eyebrow" style="margin-bottom: 24px;">Services</div>
+          <h2 class="services-title text-prox">What I Do</h2>
+          <p class="services-intro">Most clients hire me for a mix of these. Click any to see how I approach it.</p>
+        </div>
 
-  // Dark mode toggle
-  const toggle = document.getElementById('theme-toggle');
-  const iconSun  = document.getElementById('icon-sun');
-  const iconMoon = document.getElementById('icon-moon');
-  const html = document.documentElement;
+        <ul class="services-list">
+          <li class="service-item">
+            <button class="service-toggle">
+              <span>Paid Media (LinkedIn, Google, Meta)</span>
+              <span class="arrow">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="14"><path d="M12 5v14M5 12h14"/></svg>
+              </span>
+            </button>
+            <div class="service-body">
+              <p>I plan, run, and optimize paid programs end to end. That includes account structure, audience strategy, creative testing, and CPA reduction. Most engagements come with a monthly strategy review where we look at what's working and what to test next.</p>
+            </div>
+          </li>
 
-  // Respect system preference on first load
-  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-  const saved = localStorage.getItem('theme');
-  const isDark = saved ? saved === 'dark' : prefersDark;
+          <li class="service-item">
+            <button class="service-toggle">
+              <span>SEO &amp; Content Programs</span>
+              <span class="arrow">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="14"><path d="M12 5v14M5 12h14"/></svg>
+              </span>
+            </button>
+            <div class="service-body">
+              <p>I run a full website and competitor audit to figure out where a brand can become more visible, both in traditional search and inside LLMs like ChatGPT and Perplexity. From there, I do the keyword and topic research that determines what content to actually make. The output is a content plan tied to visibility, not a plan to make content for its own sake.</p>
+            </div>
+          </li>
 
-  function setTheme(dark) {
-    if (dark) {
-      html.setAttribute('data-theme', 'dark');
-      toggle.setAttribute('aria-pressed', 'true');
-      toggle.setAttribute('aria-label', 'Switch to light mode');
-      iconSun.style.display  = 'none';
-      iconMoon.style.display = 'block';
-    } else {
-      html.removeAttribute('data-theme');
-      toggle.setAttribute('aria-pressed', 'false');
-      toggle.setAttribute('aria-label', 'Switch to dark mode');
-      iconSun.style.display  = 'block';
-      iconMoon.style.display = 'none';
-    }
-    localStorage.setItem('theme', dark ? 'dark' : 'light');
-  }
+          <li class="service-item">
+            <button class="service-toggle">
+              <span>Go-to-Market Strategy</span>
+              <span class="arrow">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="14"><path d="M12 5v14M5 12h14"/></svg>
+              </span>
+            </button>
+            <div class="service-body">
+              <p>For new products, new segments, or new markets. I help founders and marketing leads figure out who they're really for, what message lands, which channels are worth showing up in, and what the first 90 days of a launch should actually look like.</p>
+            </div>
+          </li>
 
-  setTheme(isDark);
+          <li class="service-item">
+            <button class="service-toggle">
+              <span>Fractional CMO</span>
+              <span class="arrow">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="14"><path d="M12 5v14M5 12h14"/></svg>
+              </span>
+            </button>
+            <div class="service-body">
+              <p>For teams between hires, or for founders who want a senior marketer in the seat before committing to a full-time CMO. I run the function, manage vendors and agencies, and report into the founder or leadership team.</p>
+            </div>
+          </li>
 
-  toggle.addEventListener('click', () => {
-    setTheme(html.getAttribute('data-theme') !== 'dark');
-  });
+          <li class="service-item">
+            <button class="service-toggle">
+              <span>Marketing Experiments</span>
+              <span class="arrow">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="14"><path d="M12 5v14M5 12h14"/></svg>
+              </span>
+            </button>
+            <div class="service-body">
+              <p>Sometimes the answer isn't more ads. It's a referral program, a podcast, or a partnership. I help teams figure out where their next 100 customers are actually coming from, then build the system to get them there.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
 
-  // Keyboard: space/enter already fires click on button, but ensure focus styles show
-  toggle.addEventListener('keydown', (e) => {
-    if (e.key === 'Enter' || e.key === ' ') {
-      e.preventDefault();
-      toggle.click();
-    }
-  });
-</script>
+  <section id="featured-work" class="section">
+    <div class="container">
+      <div class="work-header">
+        <h2 class="display-1 text-prox">Featured Work</h2>
+        <a href="work.html" class="btn btn-ghost">See all work
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" width="14"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        </a>
+      </div>
 
-<!-- CURSOR DOT -->
-<div id="cursor-dot" aria-hidden="true"></div>
-<script>
-(function() {
-  var dot  = document.getElementById('cursor-dot');
-  var body = document.body;
-  var rafId, mouseX = -100, mouseY = -100;
+      <div class="work-grid">
+        <a class="work-card" href="case-studies/healthtech-ppc.html">
+          <div class="work-card-image">
+            <span class="industry">Healthcare SaaS</span>
+            <div class="metric-block">
+              <div class="metric">−70%</div>
+              <div class="metric-label">Cost per conversion in 4 months</div>
+            </div>
+          </div>
+          <span class="work-card-tag">Paid search optimization</span>
+          <h3>Reducing cost per conversion 70% in 4 months.</h3>
+          <p>Restructured Google Ads, rebuilt landing pages, and tightened audience signals for a healthcare SaaS company burning cash on PPC.</p>
+          <span class="read-more">See the case study
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" width="13"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+          </span>
+        </a>
 
-  document.addEventListener('mousemove', function(e) {
-    mouseX = e.clientX;
-    mouseY = e.clientY;
-    cancelAnimationFrame(rafId);
-    rafId = requestAnimationFrame(function() {
-      dot.style.left = mouseX + 'px';
-      dot.style.top  = mouseY + 'px';
-    });
-  });
+        <a class="work-card" href="case-studies/insurance.html">
+          <div class="work-card-image">
+            <span class="industry">Insurance</span>
+            <div class="metric-block">
+              <div class="metric">−49%</div>
+              <div class="metric-label">Cost per lead reduced</div>
+            </div>
+          </div>
+          <span class="work-card-tag">Referral program</span>
+          <h3>Cutting cost-per-lead 49% for an NJ insurance agency.</h3>
+          <p>A loan-officer referral program that brought in $85K of new business premium and 20+ enrolled partners.</p>
+          <span class="read-more">See the case study
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" width="13"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+          </span>
+        </a>
 
-  var sel = 'a, button, .theme-toggle, [role="button"], input, label';
-  document.addEventListener('mouseover', function(e) {
-    if (e.target.closest(sel)) body.classList.add('cursor-hover');
-  });
-  document.addEventListener('mouseout', function(e) {
-    if (e.target.closest(sel)) body.classList.remove('cursor-hover');
-  });
+        <a class="work-card" href="case-studies/university-masters.html">
+          <div class="work-card-image">
+            <span class="industry">Higher Education</span>
+            <div class="metric-block">
+              <div class="metric">+20%</div>
+              <div class="metric-label">Applications, year over year</div>
+            </div>
+          </div>
+          <span class="work-card-tag">Paid acquisition</span>
+          <h3>Growing graduate applications 20% in a declining sector.</h3>
+          <p>Mixed paid social and PPC to grow domestic applicant volume and cut cost per application by 37% in year one.</p>
+          <span class="read-more">See the case study
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" width="13"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+          </span>
+        </a>
 
-  document.addEventListener('mouseleave', function() { body.classList.add('cursor-out'); });
-  document.addEventListener('mouseenter', function() { body.classList.remove('cursor-out'); });
+        <a class="work-card" href="case-studies/ai-recruiting.html">
+          <div class="work-card-image">
+            <span class="industry">AI · Recruiting</span>
+            <div class="metric-block">
+              <div class="metric">$0</div>
+              <div class="metric-label">Spent on paid media</div>
+            </div>
+          </div>
+          <span class="work-card-tag">Demand gen, no budget</span>
+          <h3>A weekly podcast that doubled as the sales pipeline.</h3>
+          <p>For an early-stage AI recruiting startup with almost no ad budget, we built a guest podcast that converted listeners into demos.</p>
+          <span class="read-more">See the case study
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" width="13"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+          </span>
+        </a>
+      </div>
+    </div>
+  </section>
 
-  window.addEventListener('touchstart', function() {
-    dot.style.display = 'none';
-    body.style.cursor = '';
-  }, { once: true });
-})();
-</script>
+  <section id="contact" class="cta section">
+    <div class="container">
+      <div class="cta-inner">
+        <h2 class="text-prox">Want to work together?</h2>
+        <div class="cta-meta">
+          <p>Tell me about your team and what you're trying to grow.</p>
+          <a href="https://www.linkedin.com/in/amandarfigueroa/" target="_blank" rel="noopener">Get In Touch →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="logo">Amanda Figueroa<span>.</span></div>
+          <p>Growth marketer and fractional CMO from New Jersey. Helping B2B brands and startups grow.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Site</h4>
+          <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="work.html">Featured Work</a></li>
+            <li><a href="https://www.linkedin.com/in/amandarfigueroa/" target="_blank" rel="noopener">Get In Touch</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="mailto:amanda@launchreadymarketing.com">amanda [at] launchreadymarketing [dot] com</a></li>
+            <li><a href="https://www.linkedin.com/in/amandarfigueroa/" target="_blank" rel="noopener">LinkedIn</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 Amanda Figueroa · LaunchReady Marketing</span>
+        <span>Made with care.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
