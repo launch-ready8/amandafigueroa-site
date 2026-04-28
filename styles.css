@@ -452,7 +452,7 @@ h1, h2, h3, h4 {
   .about-grid { grid-template-columns: 1fr; }
 }
 .about-image {
-  background: var(--surface) url('assets/portrait.jpg') center/cover no-repeat;
+  background: var(--surface) url('portrait.jpg') center/cover no-repeat;
   border: 1px solid var(--border);
   aspect-ratio: 4/5;
   border-radius: var(--radius-lg);
