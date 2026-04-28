@@ -206,55 +206,25 @@ h1, h2, h3, h4 {
   place-items: center;
 }
 
-/* ---------- Nav CTA button (animated chevron) ---------- */
+/* ---------- Nav CTA button (simple pill) ---------- */
 .nav-cta {
-  position: relative;
   display: inline-flex;
   align-items: center;
-  height: 38px;
-  padding: 0 12px 0 18px;
-  border-radius: var(--radius-pill);
+  gap: 8px;
+  padding: 9px 18px;
+  border-radius: 999px;
   background: var(--primary);
   color: #FFFFFF;
   font-size: 14px;
   font-weight: 500;
-  overflow: hidden;
   white-space: nowrap;
-  transition: background 0.25s ease, transform 0.15s ease;
-  border: 1px solid transparent;
+  transition: background 0.2s ease, transform 0.15s ease;
 }
-.nav-cta:hover { background: var(--accent); }
+.nav-cta:hover { background: var(--accent); color: #FFFFFF; }
 .nav-cta:active { transform: translateY(1px); }
-.nav-cta-text {
-  margin-right: 36px;
-  position: relative;
-  z-index: 1;
-  transition: opacity 0.4s ease;
-}
-.nav-cta:hover .nav-cta-text { opacity: 0; }
-.nav-cta-arrow {
-  position: absolute;
-  right: 4px;
-  top: 4px;
-  bottom: 4px;
-  width: 28%;
-  display: grid;
-  place-items: center;
-  background: rgba(255, 255, 255, 0.18);
-  border-radius: 999px;
-  z-index: 2;
-  color: #FFFFFF;
-  transition: width 0.45s cubic-bezier(0.4, 0, 0.2, 1), transform 0.15s ease;
-}
-.nav-cta:hover .nav-cta-arrow { width: calc(100% - 8px); }
-.nav-cta:active .nav-cta-arrow { transform: scale(0.95); }
-.nav-cta-arrow svg { width: 16px; height: 16px; }
-
-/* Mobile-only "Get In Touch" link — appears in the hamburger dropdown */
-.mobile-only-link { display: none; }
+.nav-cta svg { width: 14px; height: 14px; flex-shrink: 0; }
 @media (max-width: 720px) {
-  .nav-cta { display: none; }
-  .mobile-only-link { display: block; }
+  .nav-cta { padding: 8px 14px; font-size: 13px; }
 }
 
 /* ---------- Buttons / links ---------- */
