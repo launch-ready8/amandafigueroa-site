@@ -1,177 +1,216 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-2CMGTJR0NY"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Growing graduate applications 20% in a declining sector — Amanda Figueroa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500&family=DM+Serif+Display:ital@0;1&family=Spectral:ital,wght@0,400;0,500;0,600;1,500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="system.css?v=3" />
+<style>
+html { scroll-behavior: smooth; }
+body { background: var(--bone); }
 
-  gtag('config', 'G-2CMGTJR0NY');
-</script>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Growing graduate applications 20% in a declining sector — Amanda Figueroa</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Zalando+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="../styles.css" />
+/* ---------- NAV (shared) ---------- */
+.site-nav { position:sticky; top:0; z-index:200; display:flex; align-items:center; justify-content:space-between; padding:18px clamp(22px,4vw,56px); gap:24px; background:var(--canvas); border-bottom:1.5px solid var(--ink); transition:transform .34s cubic-bezier(.4,0,.2,1), box-shadow .25s ease; }
+.site-nav.nav-hidden { transform:translateY(-100%); }
+.site-nav.nav-stuck { box-shadow:0 6px 0 -3px rgba(21,20,15,.10), 0 14px 30px -22px rgba(21,20,15,.5); }
+.site-nav .brand { font-family:'Anton',sans-serif; text-transform:uppercase; font-size:18px; letter-spacing:.02em; color:var(--ink); text-decoration:none; }
+.site-nav .brand b { color:var(--cobalt); }
+.site-nav .links { display:flex; gap:26px; align-items:center; }
+.site-nav .links a { font-family:var(--font-body); font-weight:700; text-transform:uppercase; letter-spacing:.12em; font-size:11.5px; color:var(--ink-70); text-decoration:none; }
+.site-nav .links a:not(.cta){ position:relative; padding-bottom:3px; transition:color .2s ease; }
+.site-nav .links a:not(.cta)::after{ content:''; position:absolute; left:0; right:0; bottom:-1px; height:4px; background:var(--butter); transform:scaleX(0); transform-origin:left center; transition:transform .26s cubic-bezier(.2,.8,.2,1); }
+.site-nav .links a:not(.cta):hover{ color:var(--ink); }
+.site-nav .links a:not(.cta):hover::after{ transform:scaleX(1); }
+.site-nav .links a.cta { background:var(--cobalt); color:#fff; border:1.5px solid var(--ink); padding:10px 16px; border-radius:var(--r-pill); transition:transform .12s ease, box-shadow .12s ease; }
+.site-nav .links a.cta:hover { transform:translate(-2px,-2px); box-shadow:var(--shadow-lift); }
+.site-nav .links a[aria-current="page"]{ color:var(--ink); }
+.site-nav .links a[aria-current="page"]::after{ transform:scaleX(1); }
+@media(max-width:820px){ .site-nav .links a:not(.cta){ display:none; } }
+
+/* ---------- CASE HERO ---------- */
+.cs-hero { padding:clamp(34px,5vw,64px) 0 clamp(24px,3vw,40px); }
+.cs-hero .back { font-family:var(--font-body); font-weight:700; text-transform:uppercase; letter-spacing:.1em; font-size:11px; color:var(--ink-70); text-decoration:none; display:inline-flex; gap:7px; margin-bottom:26px; }
+.cs-hero .back:hover { color:var(--cobalt); }
+.cs-title { font-family:'Anton',sans-serif; text-transform:uppercase; font-weight:400; font-size:clamp(36px,5.6vw,80px); line-height:.92; letter-spacing:-0.015em; margin:14px 0 0; max-width:17ch; padding-bottom:.04em; }
+.cs-hero .lede { margin-top:clamp(34px,4vw,46px); max-width:46ch; }
+.cs-meta { display:grid; grid-template-columns:repeat(4,1fr); gap:22px; margin-top:42px; padding-top:22px; border-top:1.5px solid var(--ink); }
+@media(max-width:680px){ .cs-meta{ grid-template-columns:1fr 1fr; gap:18px; } }
+.cs-meta .m-label { font-family:var(--font-body); font-weight:700; text-transform:uppercase; letter-spacing:.12em; font-size:10px; color:var(--ink-45); display:block; margin-bottom:6px; }
+.cs-meta .m-val { font-family:var(--font-body); font-weight:600; font-size:14.5px; color:var(--ink); display:block; line-height:1.35; }
+
+/* ---------- COVER ---------- */
+.cs-cover { background:var(--cobalt); color:#fff; border:1.5px solid var(--ink); border-radius:var(--r-soft); padding:clamp(28px,4vw,52px); position:relative; overflow:hidden; margin-bottom:clamp(20px,3vw,36px); }
+.cc-top { display:flex; justify-content:space-between; gap:20px; }
+.cc-top span { font-family:var(--font-body); font-weight:700; text-transform:uppercase; letter-spacing:.14em; font-size:11px; color:rgba(255,255,255,.65); }
+.cc-metric { font-family:'Anton',sans-serif; font-size:clamp(76px,15vw,180px); line-height:.86; color:var(--butter); letter-spacing:-0.03em; margin-top:clamp(20px,4vw,48px); }
+.cc-mlabel { font-family:var(--font-serif-text); font-size:clamp(16px,1.8vw,21px); color:rgba(255,255,255,.9); max-width:40ch; margin-top:14px; }
+.cc-sticker { position:absolute; top:clamp(20px,4vw,48px); right:clamp(20px,4vw,52px); }
+
+/* ---------- CONTENT SECTIONS ---------- */
+.cs-block { display:grid; grid-template-columns:.4fr 1.6fr; gap:clamp(24px,5vw,72px); align-items:start; padding:clamp(40px,6vw,80px) 0; border-top:1.5px solid var(--ink-15); }
+@media(max-width:720px){ .cs-block{ grid-template-columns:1fr; gap:18px; } }
+.cs-block .b-label { font-family:var(--font-body); font-weight:700; text-transform:uppercase; letter-spacing:.14em; font-size:11px; color:var(--cobalt); padding-top:8px; }
+.cs-block h2 { font-family:'Anton',sans-serif; text-transform:uppercase; font-weight:400; font-size:clamp(24px,3.4vw,40px); line-height:1.02; letter-spacing:-0.01em; margin:0 0 28px; padding-bottom:.03em; max-width:22ch; }
+.cs-block p { font-family:var(--font-serif-text); font-size:clamp(16px,1.5vw,18.5px); line-height:1.62; color:var(--ink-70); margin:0 0 18px; max-width:62ch; }
+.cs-block p strong { color:var(--ink); font-weight:600; }
+.pull { margin-top:10px; }
+
+/* ---------- RESULTS ---------- */
+.cs-results { background:var(--ink); color:#fff; }
+.cs-results .b-label { color:var(--butter); }
+.cs-results h2 { color:#fff; }
+.results-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:28px; margin-top:clamp(28px,4vw,44px); }
+@media(max-width:720px){ .results-grid{ grid-template-columns:1fr; } }
+.result { border-top:2px solid var(--butter); padding-top:16px; }
+.result .num { font-family:'Anton',sans-serif; font-size:clamp(40px,5vw,64px); line-height:.9; color:var(--butter); letter-spacing:-0.02em; }
+.result .desc { font-family:var(--font-serif-text); font-size:15px; color:rgba(255,255,255,.82); margin-top:12px; line-height:1.5; }
+
+/* ---------- NEXT ---------- */
+.cs-next { border-top:1.5px solid var(--ink); padding:clamp(36px,5vw,64px) 0; }
+.cs-next a { display:flex; align-items:center; justify-content:space-between; gap:24px; text-decoration:none; color:var(--ink); }
+.cs-next .nlabel { font-family:var(--font-body); font-weight:700; text-transform:uppercase; letter-spacing:.12em; font-size:11px; color:var(--ink-45); margin-bottom:10px; }
+.cs-next h3 { font-family:'Anton',sans-serif; text-transform:uppercase; font-weight:400; font-size:clamp(24px,4vw,46px); line-height:.96; letter-spacing:-0.01em; margin:0; max-width:20ch; transition:color .2s, transform .25s; }
+.cs-next a:hover h3 { color:var(--cobalt); transform:translateX(6px); }
+.cs-next .arw-lg { width:52px; height:52px; border-radius:50%; background:var(--ink); color:#fff; display:grid; place-items:center; flex-shrink:0; transition:background .2s; font-size:22px; }
+.cs-next a:hover .arw-lg { background:var(--cobalt); }
+
+/* ---------- FOOTER ---------- */
+.foot .f-links { display:flex; gap:22px; justify-content:flex-end; flex-wrap:wrap; }
+.foot .f-links a { font-family:var(--font-body); font-weight:700; text-transform:uppercase; letter-spacing:.1em; font-size:11px; color:rgba(255,255,255,.8); text-decoration:none; }
+.foot .f-links a:hover { color:var(--butter); }
+.foot .f-bottom { display:flex; justify-content:space-between; gap:16px; flex-wrap:wrap; margin-top:40px; padding-top:20px; border-top:1px solid rgba(255,255,255,.18); font-size:12px; color:rgba(255,255,255,.5); }
+@media(max-width:820px){ .foot .f-links{ justify-content:flex-start; } }
+</style>
+<link rel="icon" href="/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" href="/favicon.png" />
+<link rel="apple-touch-icon" href="/favicon.png" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Amanda Figueroa" />
+<meta property="og:title" content="Amanda Figueroa — Fractional Growth Marketer" />
+<meta property="og:description" content="I study what makes people pay attention, then turn it into sales pipeline for B2B companies, startups, and agencies." />
+<meta property="og:url" content="https://amandafigueroa.me/" />
+<meta property="og:image" content="https://amandafigueroa.me/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Amanda Figueroa — Fractional Growth Marketer" />
+<meta name="twitter:description" content="I study what makes people pay attention, then turn it into sales pipeline for B2B companies, startups, and agencies." />
+<meta name="twitter:image" content="https://amandafigueroa.me/og-image.png" />
 </head>
-<body>
-  <nav class="nav">
-    <div class="container nav-inner">
-      <a href="/" class="nav-logo">Amanda Figueroa<span>.</span></a>
-      <div class="nav-cluster">
-        <ul class="nav-links">
-          <li><a href="/#about">About</a></li>
-          <li><a href="/#services">Services</a></li>
-          <li><a href="/work.html">Featured Work</a></li>
-        </ul>
-        <a class="nav-cta" href="https://www.linkedin.com/in/amandarfigueroa/" target="_blank" rel="noopener">
-          Get In Touch
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>
-        </a>
-        <div class="nav-controls">
-          <button class="theme-toggle" data-theme-toggle aria-label="Toggle dark mode">
-            <svg width="16" height="16" class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-            <svg width="16" height="16" class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
-          </button>
-        </div>
+<body data-neutral="bone">
+
+<nav class="site-nav">
+  <a class="brand" href="index.html">AMANDA<b>·</b>FIGUEROA</a>
+  <span class="links">
+    <a href="work.html" aria-current="page">Work</a>
+    <a href="index.html#services">Services</a>
+    <a href="about.html">About Me</a>
+    <a href="contact.html" class="cta">Start a project ↗</a>
+  </span>
+</nav>
+
+<header class="cs-hero">
+  <div class="wrap">
+    <a class="back" href="work.html">← All work</a>
+    <p class="eyebrow">Case study · Higher Education</p>
+    <h1 class="cs-title">Growing graduate applications <span class="mark">20%</span> in a declining sector.</h1>
+    <p class="lede">Rebuilt around career outcomes, not credentials.</p>
+    <div class="cs-meta">
+      <div><span class="m-label">Industry</span><span class="m-val">Higher Education</span></div>
+      <div><span class="m-label">Role</span><span class="m-val">Paid acquisition lead</span></div>
+      <div><span class="m-label">Services</span><span class="m-val">Paid media · Audience · Creative</span></div>
+      <div><span class="m-label">Timeline</span><span class="m-val">Year one</span></div>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="cs-cover">
+    <div class="cc-top"><span>Higher Education</span><span>Paid acquisition lead</span></div>
+    <div class="cc-metric">+20%</div>
+    <div class="cc-mlabel">Year-over-year growth in applications, driven by domestic expansion.</div>
+    <span class="sticker butter cc-sticker" style="transform:rotate(-5deg);">A five-year high</span>
+  </div>
+</div>
+
+<section class="section" style="padding-top:0;">
+  <div class="wrap">
+
+    <div class="cs-block">
+      <div class="b-label">The challenge</div>
+      <div>
+        <h2>Spending on paid media without knowing if it was working.</h2>
+        <p>Graduate applications were down sector-wide. The program had paid media live, run by a previous agency, but the team could not get a clear read on whether the ads were actually contributing to applications. Attribution in higher ed is difficult on the best of days, and the team was not getting the confidence they needed to keep investing.</p>
+        <p>What they wanted was sharper messaging, smarter targeting, and the ability to see paid media's impact in the funnel, not just trust that it was working.</p>
       </div>
     </div>
-  </nav>
 
-  <header class="cs-hero">
-    <div class="container">
-      <div class="eyebrow">Case Study · Higher Education</div>
-      <h1 class="display-1">Growing graduate applications 20% in a declining sector.</h1>
-      <p class="lede">A Master's of Supply Chain Management program rebuilt its messaging and targeting around career outcomes, and grew applications in a year the rest of the sector was down.</p>
-
-      <div class="cs-meta">
-        <div>
-          <div class="label">Industry</div>
-          <div class="value">Higher Education</div>
-        </div>
-        <div>
-          <div class="label">Role</div>
-          <div class="value">Paid acquisition lead</div>
-        </div>
-        <div>
-          <div class="label">Services</div>
-          <div class="value">Paid Media, Audience Strategy, Creative</div>
-        </div>
+    <div class="cs-block">
+      <div class="b-label">The approach</div>
+      <div>
+        <h2>Speak to the outcome, not the credentials.</h2>
+        <p>We worked closely with the program and admissions teams to overhaul both messaging and targeting. The first lift was creative. We interviewed alumni, mapped the doubts prospective students kept raising, and built campaigns around what graduates actually did after the program: the role changes, the industry moves, the leadership tracks.</p>
+        <p>For targeting, we filtered by years of professional experience, current role types, and adjacent degree backgrounds, so spend went toward people who would actually fit the program. We ran three channels, each playing a different role: Meta drove the most cost-effective leads, Google brought qualified search traffic, and LinkedIn returned the highest-quality applicants.</p>
+        <div class="callout butter pull"><span class="co-label">The hook</span><p>The program runs ten months, so the creative made that the frame: “Ten months to a new role. Ten months to a leadership track. Ten months to a different industry.”</p></div>
       </div>
     </div>
-  </header>
 
-  <div class="container">
-    <div class="cs-cover">
-      <div class="cs-cover-top">
-        <span class="industry-tag">Higher Education</span>
-        <span class="role-tag">Paid acquisition lead</span>
-      </div>
-      <div class="cs-cover-metric">
-        <div class="metric-large">+20%</div>
-        <div class="metric-label-large">Year-over-year growth in applications, driven by domestic expansion.</div>
+  </div>
+</section>
+
+<section class="section cs-results">
+  <div class="wrap">
+    <div class="cs-block" style="border-top:0; padding-top:0;">
+      <div class="b-label">The results</div>
+      <div>
+        <h2>A five-year application high in a year the sector declined.</h2>
+        <div class="results-grid">
+          <div class="result"><div class="num">+20%</div><div class="desc">Year-over-year increase in applications in year one.</div></div>
+          <div class="result"><div class="num">&minus;37%</div><div class="desc">Reduction in cost per application within the first year.</div></div>
+          <div class="result"><div class="num">3</div><div class="desc">Channels in concert: Meta for cost, Google for traffic, LinkedIn for quality.</div></div>
+        </div>
       </div>
     </div>
   </div>
+</section>
 
-  <section class="cs-section">
-    <div class="container cs-section-grid">
-      <div class="label">The challenge</div>
+<section class="cs-next">
+  <div class="wrap">
+    <a href="ai-recruiting.html">
       <div>
-        <h2>Working against declining graduate application trends.</h2>
-        <p>Graduate applications were down sector-wide. The program had tested paid advertising previously, but the team couldn't get a clear read on whether the ads were actually contributing to applications.</p>
-        <p>What they wanted was sharper messaging, smarter targeting, and the ability to see paid media's impact in the funnel.</p>
+        <p class="nlabel">Next case study</p>
+        <h3>A weekly podcast that doubled as the sales pipeline</h3>
       </div>
-    </div>
-  </section>
+      <span class="arw-lg">→</span>
+    </a>
+  </div>
+</section>
 
-  <section class="cs-section">
-    <div class="container cs-section-grid">
-      <div class="label">The approach</div>
+<!-- ============ FOOTER ============ -->
+<footer class="foot">
+  <div class="wrap">
+    <div class="grid cols-2" style="align-items:end; gap:40px;">
       <div>
-        <h2>Speak to the outcome, not the credentials.</h2>
-        <p>We worked closely with the program and admissions teams to overhaul both messaging and targeting.</p>
-        <p>The first lift was creative. We interviewed alumni, mapped the most common doubts prospective students had raised, and built campaigns around what graduates actually did after the program: the role changes, the industry moves, the leadership tracks. Out of that came a "Ten Months to ___" theme. The program runs ten months, so the creative used that as a framing device: ten months to a new role, ten months to a leadership track, ten months to a different industry. It made the time investment feel concrete and the payoff specific.</p>
-        <p>For targeting, we filtered by years of professional experience, current role types, and adjacent degree backgrounds, so spend went toward people who would best fit the program.</p>
-        <p>We ran the program across three channels, each playing a different role. Meta drove the most cost-effective leads. Google brought qualified search traffic from people already considering a master's. LinkedIn returned the highest-quality applicants. Fewer in volume, stronger in fit.</p>
+        <p class="display is-condensed" style="font-size:clamp(28px,5vw,48px); color:#fff;">Amanda<span style="color:var(--butter);">·</span>Figueroa</p>
+        <p class="body-sm" style="color:rgba(255,255,255,.6); margin-top:12px; max-width:42ch;">Fractional growth marketer. Brand building and growth for B2B companies, startups, and agencies.</p>
+      </div>
+      <div class="f-links">
+        <a href="work.html">Work</a>
+        <a href="index.html#services">Services</a>
+        <a href="about.html">About</a>
+        <a href="https://www.linkedin.com/in/amandarfigueroa/" target="_blank" rel="noopener">LinkedIn ↗</a>
+        <a href="contact.html">Start a project</a>
       </div>
     </div>
-  </section>
-
-  <section class="cs-section cs-results">
-    <div class="container">
-      <div class="cs-section-grid">
-        <div class="label">The results</div>
-        <div>
-          <h2>An application high in a year the sector declined.</h2>
-          <div class="cs-results-grid">
-            <div class="cs-result">
-              <div class="number">+20%</div>
-              <div class="desc">Year-over-year increase in applications in year one.</div>
-            </div>
-            <div class="cs-result">
-              <div class="number">−37%</div>
-              <div class="desc">Reduction in cost per application within the first year.</div>
-            </div>
-            <div class="cs-result">
-              <div class="number">3</div>
-              <div class="desc">Channels working together: Meta for cost, Google for traffic, LinkedIn for quality.</div>
-            </div>
-          </div>
-        </div>
-      </div>
+    <div class="f-bottom">
+      <span>© 2026 Amanda Figueroa</span>
     </div>
-  </section>
+  </div>
+</footer>
 
-  <section class="cs-next">
-    <div class="container">
-      <a href="ai-recruiting.html">
-        <div>
-          <div class="label">Next case study</div>
-          <h3>A weekly podcast that doubled as the sales pipeline</h3>
-        </div>
-        <div class="arrow-large">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" width="18"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
-        </div>
-      </a>
-    </div>
-  </section>
-
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <div class="logo">Amanda Figueroa<span>.</span></div>
-          <p>Growth marketer and fractional CMO from New Jersey. Helping B2B brands and startups grow.</p>
-        </div>
-        <div class="footer-col">
-          <h4>Site</h4>
-          <ul>
-            <li><a href="/#about">About</a></li>
-            <li><a href="/#services">Services</a></li>
-            <li><a href="/work.html">Featured Work</a></li>
-            <li><a href="https://www.linkedin.com/in/amandarfigueroa/" target="_blank" rel="noopener">Get In Touch</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h4>Contact</h4>
-          <ul>
-            <li><a href="mailto:amanda@launchreadymarketing.com">amanda [at] launchreadymarketing [dot] com</a></li>
-            <li><a href="https://www.linkedin.com/in/amandarfigueroa/" target="_blank" rel="noopener">LinkedIn</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <span>© 2026 Amanda Figueroa · LaunchReady Marketing</span>
-        <span>Made with care.</span>
-      </div>
-    </div>
-  </footer>
-
-  <script src="../script.js"></script>
+<script src="site.js"></script>
 </body>
 </html>

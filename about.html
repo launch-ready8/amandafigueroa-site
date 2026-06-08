@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>About — Amanda Figueroa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500&family=DM+Serif+Display:ital@0;1&family=Spectral:ital,wght@0,400;0,500;0,600;1,500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="system.css?v=3" />
+<style>
+html { scroll-behavior: smooth; }
+body { background: var(--bone); overflow-x:hidden; }
+
+/* ---------- NAV (shared) ---------- */
+.site-nav { position:sticky; top:0; z-index:200; display:flex; align-items:center; justify-content:space-between; padding:18px clamp(22px,4vw,56px); gap:24px; background:var(--canvas); border-bottom:1.5px solid var(--ink); transition:transform .34s cubic-bezier(.4,0,.2,1), box-shadow .25s ease; }
+.site-nav.nav-hidden { transform:translateY(-100%); }
+.site-nav.nav-stuck { box-shadow:0 6px 0 -3px rgba(21,20,15,.10), 0 14px 30px -22px rgba(21,20,15,.5); }
+.site-nav .brand { font-family:'Anton',sans-serif; text-transform:uppercase; font-size:18px; letter-spacing:.02em; color:var(--ink); text-decoration:none; }
+.site-nav .brand b { color:var(--cobalt); }
+.site-nav .links { display:flex; gap:26px; align-items:center; }
+.site-nav .links a { font-family:var(--font-body); font-weight:700; text-transform:uppercase; letter-spacing:.12em; font-size:11.5px; color:var(--ink-70); text-decoration:none; }
+.site-nav .links a:not(.cta){ position:relative; padding-bottom:3px; transition:color .2s ease; }
+.site-nav .links a:not(.cta)::after{ content:''; position:absolute; left:0; right:0; bottom:-1px; height:4px; background:var(--butter); transform:scaleX(0); transform-origin:left center; transition:transform .26s cubic-bezier(.2,.8,.2,1); }
+.site-nav .links a:not(.cta):hover{ color:var(--ink); }
+.site-nav .links a:not(.cta):hover::after{ transform:scaleX(1); }
+.site-nav .links a.cta { background:var(--cobalt); color:#fff; border:1.5px solid var(--ink); padding:10px 16px; border-radius:var(--r-pill); transition:transform .12s ease, box-shadow .12s ease; }
+.site-nav .links a.cta:hover { transform:translate(-2px,-2px); box-shadow:var(--shadow-lift); }
+.site-nav .links a[aria-current="page"]{ color:var(--ink); }
+.site-nav .links a[aria-current="page"]::after{ transform:scaleX(1); }
+@media(max-width:820px){ .site-nav .links a:not(.cta){ display:none; } }
+
+/* ---------- HEADER ---------- */
+.page-head { padding:clamp(26px,3.5vw,46px) 0 clamp(18px,2.5vw,28px); }
+.about-hero { display:grid; grid-template-columns:1.12fr .88fr; gap:clamp(24px,5vw,60px); align-items:end; }
+.about-hero h1 { font-family:'Anton',sans-serif; text-transform:uppercase; font-weight:400; font-size:clamp(48px,9vw,120px); line-height:.84; letter-spacing:-0.015em; margin:14px 0 0; }
+.about-hero .lede { font-family:var(--font-serif-text); font-size:clamp(18px,1.9vw,24px); line-height:1.4; max-width:34ch; margin:0 0 8px; }
+.about-hero .mark { background:var(--butter); padding:0 .08em; }
+@media(max-width:820px){ .about-hero{ grid-template-columns:1fr; align-items:start; gap:20px; } .about-hero .lede{ margin-bottom:0; } }
+
+/* ---------- OFF THE CLOCK ---------- */
+.offclock-grid { display:grid; grid-template-columns:1.08fr .92fr; gap:clamp(28px,5vw,64px); align-items:center; }
+@media(max-width:820px){ .offclock-grid{ grid-template-columns:1fr; gap:28px; } }
+.offclock-copy h2 { font-family:var(--font-serif-display); font-weight:400; font-size:clamp(26px,3.4vw,42px); line-height:1.08; letter-spacing:-0.01em; margin:14px 0 22px; max-width:18ch; }
+.offclock-copy p { font-family:var(--font-serif-text); font-size:clamp(15.5px,1.5vw,17.5px); line-height:1.6; color:var(--ink-70); margin:0 0 16px; max-width:54ch; }
+.offclock-copy p strong { color:var(--ink); font-weight:600; }
+.offclock-chips { display:flex; gap:10px; flex-wrap:wrap; margin-top:26px; }
+.offclock-photo .ph { aspect-ratio:4/5; border:1.5px solid var(--ink); border-radius:var(--r-soft); overflow:hidden; background:var(--ink); }
+.offclock-photo .ph img { width:100%; height:100%; object-fit:cover; display:block; }
+@media(max-width:820px){ .offclock-photo .ph{ max-width:440px; } }
+
+/* ---------- ANNOTATED COLLAGE ---------- */
+.collage { display:grid; grid-template-columns:1.05fr .95fr; gap:clamp(28px,5vw,60px); align-items:center; }
+@media(max-width:860px){ .collage{ grid-template-columns:1fr; } }
+.collage-photo { position:relative; padding:14px 30px; }
+.ph { position:relative; border:1.5px solid var(--ink); background:var(--ink); overflow:hidden; border-radius:var(--r-soft); }
+.ph img, .ph image-slot { width:100%; height:100%; object-fit:cover; display:block; }
+.pinwrap { position:absolute; opacity:0; transform:scale(.55); z-index:3; transition:opacity .5s ease, transform .55s cubic-bezier(.2,1.3,.4,1); transition-delay:var(--d,0s); }
+.in .pinwrap { opacity:1; transform:scale(1); }
+.poppable { transition:transform .3s cubic-bezier(.2,1.3,.4,1), box-shadow .3s ease; cursor:default; }
+.poppable:hover { transform:rotate(0deg) scale(1.12) !important; box-shadow:4px 5px 0 0 var(--ink); }
+.lead-line { position:absolute; height:1.5px; background:var(--ink); transform-origin:left center; opacity:0; transition:opacity .4s ease .5s; z-index:2; }
+.in .lead-line { opacity:.5; }
+
+.collage-copy p { margin:0 0 16px; }
+.collage-copy .serif-text { font-size:clamp(17px,1.6vw,19px); color:var(--ink); }
+
+/* ---------- BIO ---------- */
+.bio-grid { display:grid; grid-template-columns:1fr 1fr; gap:clamp(28px,5vw,64px); }
+@media(max-width:760px){ .bio-grid{ grid-template-columns:1fr; } }
+.bio-grid p { font-family:var(--font-serif-text); font-size:17px; line-height:1.6; color:var(--ink-70); margin:0 0 18px; }
+.bio-grid p strong { color:var(--ink); font-weight:600; }
+.sig { font-family:var(--font-serif-display); font-style:italic; font-size:26px; color:var(--ink); margin-top:8px; }
+
+/* ---------- STATS ---------- */
+.stat-row { display:grid; grid-template-columns:repeat(3,1fr); gap:26px; border-top:1.5px solid var(--ink); border-bottom:1.5px solid var(--ink); padding:32px 0; }
+@media(max-width:680px){ .stat-row{ grid-template-columns:1fr; gap:20px; } }
+.stat-num { font-family:'Anton',sans-serif; font-size:clamp(44px,5.5vw,68px); line-height:.9; color:var(--cobalt); display:block; }
+.stat-label { font-size:13.5px; color:var(--ink-70); line-height:1.4; margin-top:8px; display:block; max-width:30ch; }
+
+/* ---------- PHOTO STRIP ---------- */
+.photo-strip { display:grid; grid-template-columns:repeat(3,1fr); gap:clamp(14px,1.8vw,22px); }
+.photo-strip.two { grid-template-columns:1fr 1fr; max-width:640px; }
+@media(max-width:760px){ .photo-strip{ grid-template-columns:1fr 1fr; } }
+.photo-strip .ph { aspect-ratio:4/5; }
+.photo-strip .ph .cap { position:absolute; bottom:10px; left:10px; font-family:var(--font-body); font-weight:700; text-transform:uppercase; letter-spacing:.1em; font-size:10px; background:var(--paper); color:var(--ink); padding:5px 9px; border:1px solid var(--ink); }
+
+/* ---------- MINI CTA ---------- */
+.mini-cta { background:var(--cobalt); color:#fff; border:1.5px solid var(--ink); border-radius:var(--r-soft); padding:clamp(30px,4vw,52px); display:flex; align-items:center; justify-content:space-between; gap:28px; flex-wrap:wrap; }
+.mini-cta h2 { font-family:'Anton',sans-serif; text-transform:uppercase; font-weight:400; font-size:clamp(30px,4.5vw,56px); line-height:.92; color:#fff; margin:0; max-width:18ch; }
+
+/* ---------- FOOTER ---------- */
+.foot .f-links { display:flex; gap:22px; justify-content:flex-end; flex-wrap:wrap; }
+.foot .f-links a { font-family:var(--font-body); font-weight:700; text-transform:uppercase; letter-spacing:.1em; font-size:11px; color:rgba(255,255,255,.8); text-decoration:none; }
+.foot .f-links a:hover { color:var(--butter); }
+.foot .f-bottom { display:flex; justify-content:space-between; gap:16px; flex-wrap:wrap; margin-top:40px; padding-top:20px; border-top:1px solid rgba(255,255,255,.18); font-size:12px; color:rgba(255,255,255,.5); }
+@media(max-width:820px){ .foot .f-links{ justify-content:flex-start; } }
+@media (prefers-reduced-motion: reduce){ .pinwrap{ opacity:1 !important; transform:none !important; } .lead-line{ opacity:.5 !important; } }
+</style>
+<link rel="icon" href="/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" href="/favicon.png" />
+<link rel="apple-touch-icon" href="/favicon.png" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Amanda Figueroa" />
+<meta property="og:title" content="Amanda Figueroa — Fractional Growth Marketer" />
+<meta property="og:description" content="I study what makes people pay attention, then turn it into sales pipeline for B2B companies, startups, and agencies." />
+<meta property="og:url" content="https://amandafigueroa.me/" />
+<meta property="og:image" content="https://amandafigueroa.me/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Amanda Figueroa — Fractional Growth Marketer" />
+<meta name="twitter:description" content="I study what makes people pay attention, then turn it into sales pipeline for B2B companies, startups, and agencies." />
+<meta name="twitter:image" content="https://amandafigueroa.me/og-image.png" />
+</head>
+<body data-neutral="bone">
+
+<nav class="site-nav">
+  <a class="brand" href="index.html">AMANDA<b>·</b>FIGUEROA</a>
+  <span class="links">
+    <a href="work.html">Work</a>
+    <a href="index.html#services">Services</a>
+    <a href="about.html" aria-current="page">About Me</a>
+    <a href="contact.html" class="cta">Start a project ↗</a>
+  </span>
+</nav>
+
+<header class="page-head">
+  <div class="wrap">
+    <div class="about-hero">
+      <div>
+        <p class="eyebrow">About me</p>
+        <h1>Hi, I'm<br />Amanda.</h1>
+      </div>
+      <p class="lede">I'm a fractional growth marketer who has always lived <span class="mark">between the creative and the analytical.</span></p>
+    </div>
+  </div>
+</header>
+
+<!-- ============ ANNOTATED COLLAGE ============ -->
+<section class="section tight" id="collage" style="padding-top:clamp(18px,2.5vw,32px);">
+  <div class="wrap">
+    <div class="collage">
+      <div class="collage-photo">
+        <div class="ph" style="width:84%; aspect-ratio:4/5; margin:0 auto;">
+          <img src="images/about-collage.png" alt="Amanda Figueroa" />
+        </div>
+        <span class="pinwrap" style="top:3%; left:-3%; --d:.3s;"><span class="sticker butter poppable" style="transform:rotate(-7deg);">Started in the music industry</span></span>
+        <span class="pinwrap" style="top:46%; right:-4%; --d:.5s;"><span class="sticker blue poppable" style="transform:rotate(5deg);">Speaks 3 languages</span></span>
+        <span class="pinwrap" style="bottom:7%; left:4%; --d:.7s;"><span class="sticker butter poppable" style="transform:rotate(-4deg);">Fueled by penne vodka</span></span>
+      </div>
+      <div class="collage-copy">
+        <p class="serif" style="font-size:clamp(22px,2.6vw,30px); line-height:1.14; margin-bottom:18px;">I love brainstorming a brand name just as much as I love digging into campaign data to figure out why something is not converting.</p>
+        <p class="serif-text">I work with B2B companies, startups, and agencies, often building marketing programs from scratch. Paid campaigns, SEO and AEO, content, and the growth playbooks that help teams scale. A lot of the time I am the first marketer a team brings on, building the growth function alongside them from the ground up.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ============ STATS ============ -->
+<section class="section tight">
+  <div class="wrap">
+    <div class="stat-row">
+      <div><span class="stat-num">$1M+</span><span class="stat-label">Managed in ad spend across LinkedIn, Google, and Meta.</span></div>
+      <div><span class="stat-num">30+</span><span class="stat-label">Clients and partners served, from Fortune 500 brands to early-stage startups and SMBs.</span></div>
+      <div><span class="stat-num">3</span><span class="stat-label">Languages spoken, which shapes how I think about audience and message.</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FULL BIO ============ -->
+<section class="section paper">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>The long version</h2>
+    </div>
+    <div class="bio-grid">
+      <div>
+        <p>I started my career in the music industry, where many moons ago I had dreams of being a producer. Eventually I found my way into tech, and in 2018 I became the <strong>first marketing hire at a 16-person AI startup</strong> with zero ad budget and a lot of ambition.</p>
+        <p>That experience shaped everything. I was running sales demos, writing chatbot scripts, hunting for leads, launching a podcast, and figuring out which messages actually resonated with real people. I learned fast and got to create the playbook in real time.</p>
+      </div>
+      <div>
+        <p>I bring that same scrappy energy to my work today. I love working with teams that are just starting to build their growth engine, whether that is because they do not have a marketing team yet, or they are ready to test something new. I like to figure out what is working in the industry and then find our own creative angle.</p>
+        <p>Outside of work, I speak three languages, travel a bunch, and pay attention to things you could easily walk past. Branding on the street, how different cultures communicate, what makes someone stop and look. When I am not in front of a laptop, I am probably on a dance floor, catching a flight, or eating penne vodka.</p>
+        <p class="sig">— Amanda</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PHOTO STRIP ============ -->
+<section class="section tight">
+  <div class="wrap">
+    <div class="offclock-grid">
+      <div class="offclock-copy">
+        <p class="eyebrow">Off the clock</p>
+        <h2>I caught the travel bug at 18, and it never wore off.</h2>
+        <p>My first time abroad was a two-week exchange trip to Spain. It totally opened up my worldview and made me fall in love with learning about other cultures and the different ways that people live.</p>
+        <p>Since then I've visited 20+ countries across five continents, always chasing the local perspective. Travel is what fuels my obsession with languages and being able to connect with people in their native tongue. Wherever I land, I'm hunting for a good dance floor, a beach with clear water, or somewhere to share a meal.</p>
+        <p>Then I bring everything that inspires me out there back into my work.</p>
+      </div>
+      <div class="offclock-photo">
+        <div class="ph"><img src="images/offclock-2.png" alt="Amanda traveling" /></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MINI CTA ============ -->
+<section class="section tight">
+  <div class="wrap">
+    <div class="mini-cta">
+      <h2>Think we'd work well together?</h2>
+      <a class="btn" href="contact.html" style="background:var(--butter);">Start a project <span class="arw">→</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="foot">
+  <div class="wrap">
+    <div class="grid cols-2" style="align-items:end; gap:40px;">
+      <div>
+        <p class="display is-condensed" style="font-size:clamp(28px,5vw,48px); color:#fff;">Amanda<span style="color:var(--butter);">·</span>Figueroa</p>
+        <p class="body-sm" style="color:rgba(255,255,255,.6); margin-top:12px; max-width:42ch;">Fractional growth marketer. Brand building and growth for B2B companies, startups, and agencies.</p>
+      </div>
+      <div class="f-links">
+        <a href="work.html">Work</a>
+        <a href="index.html#services">Services</a>
+        <a href="about.html">About</a>
+        <a href="https://www.linkedin.com/in/amandarfigueroa/" target="_blank" rel="noopener">LinkedIn ↗</a>
+        <a href="contact.html">Start a project</a>
+      </div>
+    </div>
+    <div class="f-bottom">
+      <span>© 2026 Amanda Figueroa</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  function reveal(){ document.querySelectorAll('#collage').forEach(function(h){ h.classList.add('in'); }); }
+  if (document.readyState === 'complete' || document.readyState === 'interactive') { setTimeout(reveal, 120); }
+  else { window.addEventListener('DOMContentLoaded', function(){ setTimeout(reveal, 120); }); }
+})();
+</script>
+<script src="site.js"></script>
+</body>
+</html>
