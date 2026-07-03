@@ -21,12 +21,51 @@
 
     if (Math.abs(y - lastY) < delta) return;
 
-    if (y > lastY && y > threshold) {
-      nav.classList.add('nav-hidden');     // scrolling down
-    } else {
-      nav.classList.remove('nav-hidden');  // scrolling up
-    }
+    // Always-visible sticky nav (no hide-on-scroll). Keep it pinned; the
+    // shadow above signals it's floating once you leave the top.
+    nav.classList.remove('nav-hidden');
     lastY = y;
+  }, { passive: true });
+})();
+
+/* ---------------------------------------------------------
+   Marquee auto-fill — guarantees a seamless, gap-free endless
+   loop on ANY screen width. The CSS keyframe slides the track
+   by -50%, so the track must be an even number of identical
+   units and at least 2x the container width. We treat each
+   marquee's authored content as one unit and duplicate it
+   (always an even count) until it comfortably overflows.
+   --------------------------------------------------------- */
+(function () {
+  var marquees = document.querySelectorAll('.marquee');
+  if (!marquees.length) return;
+
+  function fill(m) {
+    var track = m.querySelector('.track');
+    if (!track) return;
+    if (!track.dataset.unit) track.dataset.unit = track.innerHTML;
+    var unit = track.dataset.unit;
+    // start with two units (keeps the -50% seam perfect)
+    track.innerHTML = unit + unit;
+    var guard = 0;
+    // grow (two units at a time) until the track is >= 2x the visible width
+    while (track.scrollWidth < m.clientWidth * 2 + 40 && guard < 12) {
+      track.innerHTML += unit + unit;
+      guard++;
+    }
+  }
+
+  function fillAll() { Array.prototype.forEach.call(marquees, fill); }
+
+  fillAll();
+  // refit once fonts settle (glyph widths change the measurement)
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(fillAll);
+  window.addEventListener('load', fillAll);
+
+  var t;
+  window.addEventListener('resize', function () {
+    clearTimeout(t);
+    t = setTimeout(fillAll, 180);
   }, { passive: true });
 })();
 

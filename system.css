@@ -1,6 +1,20 @@
+/* ---------- FONT LOADING ---------- */
+@import url('https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+/* Stack Sans Notch — Koto's notched display sans (self-hosted via Fontsource CDN) */
+@font-face {
+  font-family: 'Stack Sans Notch';
+  font-style: normal;
+  font-weight: 200 700;
+  font-display: swap;
+  src: url('https://cdn.jsdelivr.net/fontsource/fonts/stack-sans-notch:vf@latest/latin-wght-normal.woff2') format('woff2-variations'),
+       url('https://cdn.jsdelivr.net/fontsource/fonts/stack-sans-notch@latest/latin-700-normal.woff2') format('woff2');
+}
+
 /* =========================================================
    AMANDA FIGUEROA — DESIGN SYSTEM
    "Street Editorial" — collage energy, growth-marketer brain
+   Display: Stack Sans Notch  ·  Text: Anonymous Pro
    ========================================================= */
 
 /* ---------- TOKENS ---------- */
@@ -12,8 +26,8 @@
   --butter:      #FCE96A;
   --butter-deep: #F3D63B;
   --ink:         #15140F;
-  --ink-70:      #4a483f;
-  --ink-45:      #86837a;
+  --ink-70:      #3a382f;
+  --ink-45:      #6b685e;
   --ink-15:      #d9d6cc;
   --signal:      #E5402E; /* sticker pop, used sparingly */
 
@@ -24,10 +38,10 @@
   --canvas: var(--bone);     /* page bg, themed below */
 
   /* fonts */
-  --font-display: 'Anton', sans-serif;
-  --font-serif-display: 'DM Serif Display', serif;  /* big, short, punchy — feed posts, pull quotes */
-  --font-serif-text:    'Spectral', serif;          /* readable at length — website, long copy */
-  --font-body:    'Archivo', sans-serif;
+  --font-display: 'Stack Sans Notch', sans-serif;
+  --font-serif-display: 'Anonymous Pro', serif;  /* big, short, punchy — feed posts, pull quotes */
+  --font-serif-text:    'Anonymous Pro', serif;          /* readable at length — website, long copy */
+  --font-body:    'Anonymous Pro', sans-serif;
 
   /* radius */
   --r-sharp: 2px;
@@ -47,8 +61,16 @@
 body[data-neutral="cream"] { --canvas: var(--cream); }
 body[data-neutral="bone"]  { --canvas: var(--bone); }
 
-/* headline is locked to Anton condensed (Amanda's pick) */
-body { --font-display: 'Anton', sans-serif; }
+/* headline: Stack Sans Notch, run heavy + slightly looser than the old
+   condensed Anton metrics (Anton was ultra-condensed; Notch is normal width) */
+body { --font-display: 'Stack Sans Notch', sans-serif; }
+
+/* Stack Sans Notch reads best BOLD at display sizes. These carry weight to the
+   shared headline patterns even where page styles set font-weight:400 for Anton. */
+.display, .display.is-condensed,
+.sec-head h2, .sec-head .num,
+.lb .lb-display { font-weight: 700 !important; letter-spacing: -0.02em; }
+.display { line-height: 0.94; }
 
 /* ---------- RESET ---------- */
 * { box-sizing: border-box; }
@@ -77,7 +99,7 @@ a { color: inherit; }
 }
 /* Anton headlines are always uppercase */
 .display.is-condensed {
-  font-family: 'Anton', sans-serif;
+  font-family: 'Stack Sans Notch', sans-serif;
   font-weight: 400;
   text-transform: uppercase;
   letter-spacing: -0.005em;
@@ -113,7 +135,7 @@ a { color: inherit; }
 .eyebrow.on-dark { color: rgba(255,255,255,.7); }
 
 .lede { font-size: clamp(18px, 2.2vw, 22px); line-height: 1.5; color: var(--ink-70); }
-.body-sm { font-size: 14.5px; line-height: 1.55; color: var(--ink-70); }
+.body-sm { font-size: 15.5px; line-height: 1.55; color: var(--ink-70); }
 
 /* highlighter mark */
 .mark {
@@ -152,11 +174,11 @@ a { color: inherit; }
 /* section header pattern */
 .sec-head { display: flex; align-items: baseline; gap: 16px; margin-bottom: 36px; flex-wrap: wrap; }
 .sec-head .num {
-  font-family: 'Anton', sans-serif; font-size: 13px; letter-spacing: .04em;
+  font-family: 'Stack Sans Notch', sans-serif; font-size: 13px; letter-spacing: .04em;
   border: 1.5px solid currentColor; border-radius: var(--r-pill);
   padding: 4px 12px; opacity: .65;
 }
-.sec-head h2 { font-family: 'Anton', sans-serif; font-weight: 400; text-transform: uppercase;
+.sec-head h2 { font-family: 'Stack Sans Notch', sans-serif; font-weight: 400; text-transform: uppercase;
   font-size: clamp(26px, 4vw, 44px); line-height: .95; letter-spacing: -0.01em; margin: 0; }
 
 /* =========================================================
@@ -249,14 +271,60 @@ a { color: inherit; }
 }
 .marquee.butter { background: var(--butter); color: var(--ink); }
 .marquee.ink { background: var(--ink); color: #fff; }
-.marquee .track { display: inline-block; will-change: transform; animation: marquee 26s linear infinite; }
+.marquee .track { display: inline-block; white-space: nowrap; will-change: transform; animation: marquee 32s linear infinite; }
+.marquee:hover .track { animation-play-state: paused; }
 .marquee .track span {
-  font-family: 'Anton', sans-serif; text-transform: uppercase; font-size: 16px;
-  letter-spacing: .02em; padding: 0 26px; opacity: .96;
+  font-family: 'Stack Sans Notch', sans-serif; font-weight: 700; text-transform: uppercase; font-size: 16px;
+  letter-spacing: .01em; padding: 0 26px; opacity: .96;
 }
 .marquee .track span::after { content: "✦"; margin-left: 26px; opacity: .55; font-size: 12px; vertical-align: middle; }
 @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
-@media (prefers-reduced-motion: reduce) { .marquee .track { animation: none; } }
+/* endless-motion intent: under reduced-motion, slow the crawl instead of freezing it */
+@media (prefers-reduced-motion: reduce) { .marquee .track { animation-duration: 120s; } }
+
+/* ---------- PIXEL ICONS (retro sprite set) ---------- */
+/* Crisp, un-smoothed pixel art. Sizes track font-size by default. */
+.pixicon {
+  image-rendering: pixelated; image-rendering: crisp-edges;
+  display: inline-block; vertical-align: -0.22em;
+  height: 1.15em; width: auto; user-select: none; -webkit-user-drag: none;
+}
+.pixicon.sm { height: 0.95em; vertical-align: -0.15em; }
+.pixicon.lg { height: 2.2em; vertical-align: middle; }
+.pixicon.xl { height: 3.4em; vertical-align: middle; }
+
+/* PIX TILE — an icon parked in a bordered white cell, echoing the sprite sheet */
+.pix-tile {
+  display: inline-grid; place-items: center;
+  width: 62px; height: 62px; padding: 10px;
+  background: var(--paper); border: 1.5px solid var(--ink); border-radius: var(--r-soft);
+}
+.pix-tile img { image-rendering: pixelated; image-rendering: crisp-edges; max-width: 100%; max-height: 100%; width: auto; }
+.pix-tile.sm { width: 46px; height: 46px; padding: 7px; }
+.pix-tile.lg { width: 84px; height: 84px; padding: 14px; }
+.pix-tile.butter { background: var(--butter); }
+.pix-tile.blue { background: var(--cobalt); }
+.pix-tile.dashed { border-style: dashed; }
+.pix-tile.tilt-l { transform: rotate(-5deg); }
+.pix-tile.tilt-r { transform: rotate(5deg); }
+.pix-tile.pop { box-shadow: 4px 4px 0 0 var(--ink); }
+
+/* PIX CHIP — sticker-style pill that leads with a pixel icon */
+.pix-chip {
+  display: inline-flex; align-items: center; gap: 9px;
+  font-family: var(--font-body); font-weight: 700; text-transform: uppercase;
+  letter-spacing: 0.06em; font-size: 12px; line-height: 1;
+  padding: 8px 15px 8px 11px; border: 1.5px solid var(--ink);
+  border-radius: var(--r-pill); background: var(--paper); color: var(--ink);
+}
+.pix-chip img { image-rendering: pixelated; image-rendering: crisp-edges; height: 20px; width: auto; }
+.pix-chip.butter { background: var(--butter); }
+.pix-chip.blue { background: var(--cobalt); color: #fff; border-color: var(--ink); }
+
+/* PIX BULLET — list rows led by a pixel icon instead of a dash/dot */
+.pix-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; }
+.pix-list li { display: grid; grid-template-columns: 30px 1fr; align-items: start; gap: 14px; }
+.pix-list li img { image-rendering: pixelated; image-rendering: crisp-edges; width: 26px; height: auto; margin-top: 2px; }
 
 /* ---------- PHOTO ---------- */
 .photo {
@@ -276,14 +344,14 @@ a { color: inherit; }
 .swatch { border: 1.5px solid var(--ink); border-radius: var(--r-soft); overflow: hidden; background: var(--paper); }
 .swatch .chip { height: 132px; }
 .swatch .meta { padding: 14px 16px; }
-.swatch .meta .nm { font-family: 'Anton', sans-serif; text-transform: uppercase; font-size: 15px; letter-spacing: .01em; }
+.swatch .meta .nm { font-family: 'Stack Sans Notch', sans-serif; text-transform: uppercase; font-size: 15px; letter-spacing: .01em; }
 .swatch .meta .hex { font-family: var(--font-body); font-weight: 600; font-size: 13px; color: var(--ink-70); display: flex; justify-content: space-between; gap: 10px; margin-top: 4px; }
 .swatch .meta .hex span { white-space: nowrap; }
 .swatch .meta .use { font-size: 12.5px; color: var(--ink-45); margin-top: 8px; }
 
 /* ---------- SPEC CARD ---------- */
 .spec { border: 1.5px solid var(--ink); border-radius: var(--r-soft); background: var(--paper); padding: 22px; }
-.spec h4 { font-family: 'Anton', sans-serif; text-transform: uppercase; font-weight: 400; font-size: 16px; margin: 0 0 12px; }
+.spec h4 { font-family: 'Stack Sans Notch', sans-serif; text-transform: uppercase; font-weight: 400; font-size: 16px; margin: 0 0 12px; }
 
 /* ---------- TOP SWITCHER ---------- */
 .switcher {
@@ -293,7 +361,7 @@ a { color: inherit; }
   padding: 10px var(--gutter);
   border-bottom: 1.5px solid #000;
 }
-.switcher .brandmark { font-family: 'Anton', sans-serif; text-transform: uppercase; font-size: 15px; letter-spacing: .02em; margin-right: auto; }
+.switcher .brandmark { font-family: 'Stack Sans Notch', sans-serif; text-transform: uppercase; font-size: 15px; letter-spacing: .02em; margin-right: auto; }
 .switcher .brandmark b { color: var(--butter); }
 .seg { display: inline-flex; border: 1.5px solid rgba(255,255,255,.4); border-radius: var(--r-pill); overflow: hidden; }
 .seg button {
@@ -312,7 +380,7 @@ a { color: inherit; }
 
 /* generic artboard reset */
 .lb { font-family: var(--font-body); color: var(--ink); position: relative; overflow: hidden; }
-.lb .lb-display { font-family: 'Anton', sans-serif; text-transform: uppercase; line-height: .9; letter-spacing: -0.01em; margin: 0; }
+.lb .lb-display { font-family: 'Stack Sans Notch', sans-serif; text-transform: uppercase; line-height: .9; letter-spacing: -0.01em; margin: 0; }
 .lb .lb-serif { font-family: var(--font-serif-display); margin: 0; }
 
 footer.foot { background: var(--ink); color: #fff; padding: 60px 0; }
@@ -352,7 +420,7 @@ body.nav-open .nav-menu {
   font-size: 26px; line-height: 1; cursor: pointer; display: grid; place-items: center;
 }
 .nav-menu a {
-  font-family: 'Anton', sans-serif; text-transform: uppercase; letter-spacing: .01em;
+  font-family: 'Stack Sans Notch', sans-serif; text-transform: uppercase; letter-spacing: .01em;
   font-size: clamp(32px, 9vw, 48px); color: #fff; text-decoration: none;
 }
 .nav-menu a.cta {
